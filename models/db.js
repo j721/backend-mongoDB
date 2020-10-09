@@ -14,4 +14,4 @@ mongoose.connect(
   }
 );
 
-require("./user.model");
+require("./userModel");
