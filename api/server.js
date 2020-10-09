@@ -1,9 +1,13 @@
+require('../models/db.js');
+
 const express = require('express');
 const path = require('path');
 const handlebars =require('handlebars');
 const exphbs = require('express-handlebars');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const bodyparser = require('body-parser');
+
+const userController = require("../controllers/userController");
 
 const server = express();
  
@@ -30,5 +34,7 @@ server.engine('hbs', exphbs({
 }));
 
 server.set('view engine', 'hbs');      //hbs stands for handlebars
+
+server.use("/user", userController);
 
 module.exports = server; 
