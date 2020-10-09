@@ -61,3 +61,15 @@ router.get("/list", (res, res) => {
     }
   });
 });
+
+router.get("/:id", (req, res) => {
+  User.findById(req.params.id, (err, doc) => {
+    if (!err) {
+      res.render("user/addOrEdit", {
+        viewTitle: "Update User",
+        user: doc,
+      });
+      console.log(doc);
+    }
+  });
+});
