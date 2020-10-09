@@ -1,0 +1,19 @@
+{
+  "name": "backend-mongodb",
+  "version": "1.0.0",
+  "description": "MongoDB database used for backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j721/backend-mongoDB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/j721/backend-mongoDB/issues"
+  },
+  "homepage": "https://github.com/j721/backend-mongoDB#readme"
+}
