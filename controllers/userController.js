@@ -50,7 +50,7 @@ function updateRecord(req, res) {
   );
 }
 
-router.get("/list", (res, res) => {
+router.get("/list", (req, res) => {
   User.find((err, docs) => {
     if (!err) {
       res.render("user/list", {
@@ -83,3 +83,5 @@ router.get("delete/:id", (req, res) => {
     }
   });
 });
+
+module.exports = router; 
