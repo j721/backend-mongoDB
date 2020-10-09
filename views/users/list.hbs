@@ -1,0 +1,33 @@
+{{!-- this will display the list of users in a table format --}}
+
+<h3>
+    <a class ="btn btn-secondary" href ="/user">Create New</a>
+    Users List
+</h3>
+
+<table class =" table table-striped">
+    <thead>
+        <tr>Full Name</tr>
+        <tr>Email</tr>
+        <tr>Mobile</tr>
+        <tr>City</tr>
+    </thead>
+
+    <tbody>
+        {{!-- create a row for each item listed. For two or more items have the item be listed in rows --}}
+        {{!-- list coming from userController in route for ("/list") --}}
+        {{#each list}}
+
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+
+            <td>
+                <a class ="btn btn-primary btn-sm" href ="/user/{{this.id}}">Edit</a>
+                <a class ="btn btn-primary btn-sm" href ="/user/delete{{this.id}}">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
