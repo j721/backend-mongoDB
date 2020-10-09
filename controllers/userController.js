@@ -49,3 +49,15 @@ function updateRecord(req, res) {
     }
   );
 }
+
+router.get("/list", (res, res) => {
+  User.find((err, docs) => {
+    if (!err) {
+      res.render("user/list", {
+        list: docs,
+      });
+    } else {
+      console.log("Error in retrieval", err);
+    }
+  });
+});
