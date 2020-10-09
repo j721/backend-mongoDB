@@ -1,15 +1,7 @@
-const express = require('express')
-const path = require('path')
-const handlebars =require('handlebars')
-const exphbs = require('express-handlebars')
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
-const bodyparser = require('body-parser')
+const server = require("./api/server");
 
-var app = express()
- 
-app.use(bodyparser.urlencoded{extended: false})
-app.use(bodyparser.json())
+const PORT = process.env.PORT || 3000;
 
-app.listen(3000, ()=>{
-    console.log('server running on port 3000')
-})
+server.listen(PORT, () => {
+  console.log(`server running on port ${PORT}`);
+});
