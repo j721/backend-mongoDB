@@ -73,3 +73,13 @@ router.get("/:id", (req, res) => {
     }
   });
 });
+
+router.get("delete/:id", (req, res) => {
+  User.findByIdAndRemove(req.params.id, (err, doc) => {
+    if (!err) {
+      res.redirect("user/list");
+    } else {
+      console.log("Error in deleting user", err);
+    }
+  });
+});
