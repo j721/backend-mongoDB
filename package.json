@@ -26,5 +26,7 @@
     "handlebars": "^4.7.6",
     "mongoose": "^5.10.8",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "keywords": []
 }

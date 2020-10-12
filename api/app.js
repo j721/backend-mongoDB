@@ -9,13 +9,13 @@ const bodyparser = require('body-parser');
 
 const userController = require("../controllers/userController");
 
-const server = express();
+const app= express();
  
-server.use(bodyparser.urlencoded({extended: false}));
-server.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.json());
 
 
-server.get('/', (req,res)=>{
+app.get('/', (req,res)=>{
     res.send(`
     <h2>Welcome to User Database! </h2>
     <h3>Click here to have access to the
@@ -24,17 +24,17 @@ server.get('/', (req,res)=>{
     `)
 });
 
-server.set('views', path.join(__dirname, '/views'));
+app.set('views', path.join(__dirname, '/views'));
 
-server.engine('hbs', exphbs({
+app.engine('hbs', exphbs({
     handlebars: allowInsecurePrototypeAccess(handlebars),
     extname: 'hbs',
     defaultLayout: 'MainLayout',
     layoutsDir: __dirname + '/views/layouts'
 }));
 
-server.set('view engine', 'hbs');      //hbs stands for handlebars
+app.set('view engine', 'hbs');      //hbs stands for handlebars
 
-server.use("/user", userController);
+app.use("/user", userController);
 
-module.exports = server; 
+module.exports = app; 
