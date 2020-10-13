@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const { unregisterPartial } = require("handlebars");
-//import from UserModel
+
+//connect to our UserModel
 const User = mongoose.model("User");
 
 router.get("/", (req, res) => {
