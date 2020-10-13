@@ -4,6 +4,7 @@
   "description": "MongoDB database used for backend",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,5 +27,9 @@
     "handlebars": "^4.7.6",
     "mongoose": "^5.10.8",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "keywords": []
 }

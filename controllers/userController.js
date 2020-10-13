@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const { unregisterPartial } = require("handlebars");
-//import from UserModel
+
+//connect to our UserModel
 const User = mongoose.model("User");
 
+//routes created need to match the naming of user folder under the views directory in order for express-handlebars to work properly
 router.get("/", (req, res) => {
   res.render("user/addOrEdit", {
     viewTitle: "Insert User",
@@ -74,10 +76,10 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.get("delete/:id", (req, res) => {
+router.get("/delete/:id", (req, res) => {
   User.findByIdAndRemove(req.params.id, (err, doc) => {
     if (!err) {
-      res.redirect("user/list");
+      res.render("user/list");
     } else {
       console.log("Error in deleting user", err);
     }
